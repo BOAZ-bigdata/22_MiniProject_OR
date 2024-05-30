@@ -40,7 +40,7 @@ class MatNetPolicy(AutoregressivePolicy):
 
     def __init__(
         self,
-        env_name: str = "atsp",
+        env_name: str = "ffsp",
         embed_dim: int = 256,
         num_encoder_layers: int = 5,
         num_heads: int = 16,
@@ -58,7 +58,7 @@ class MatNetPolicy(AutoregressivePolicy):
                 embed_dim=embed_dim,
                 num_heads=num_heads,
                 use_graph_context=use_graph_context,
-                out_bias=True,
+                # out_bias=True,
             )
 
         else:
@@ -69,7 +69,7 @@ class MatNetPolicy(AutoregressivePolicy):
                 use_graph_context=use_graph_context,
             )
 
-        super(MatNetPolicy, self).__init__(
+        super().__init__(
             env_name=env_name,
             encoder=MatNetEncoder(
                 embed_dim=embed_dim,
